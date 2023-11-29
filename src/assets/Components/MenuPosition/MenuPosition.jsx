@@ -11,7 +11,7 @@ export default function MenuPosition(props) {
             <p className='plaseholder'>{props.pPlaseholder}</p>
             <p>{props.price}</p>
         </div>
-        <Counter />
+        <Counter editAllProductsCount={props.editAllProductsCount} />
     </div>
   )
 }

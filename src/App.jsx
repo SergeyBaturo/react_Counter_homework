@@ -9,22 +9,21 @@ import Counter from './assets/Components/Counter/Counter';
 
 function App() {
 
-  const[num, setNum] = useState(0)
+  const[allProductsCount, setAllProductsCount] = useState(0)
 
-  let incriment = () => {
-    setNum(num + 1);
-}
-
-  let discriment = () => {
-    setNum(num - 1);
-}
+  let editAllProductsCount = (amper) => {
+    setAllProductsCount(allProductsCount + amper)
+  }
 
   return (
     <>
       <div>
-        <MenuPosition src={burger}  h1='Cупер сырный' pPlaseholder='512г' price='550₽' />
-        <MenuPosition src={potatoFree}  h1='Картошка фри' pPlaseholder='180г' price='245₽' />
-        <MenuPosition src={hotDog}  h1='Жгучий хот-дог' pPlaseholder='245г' price='239₽' />
+        <h1 className='allProductsCount'>{allProductsCount}</h1>
+        <div className="foodCards">
+          <MenuPosition src={burger}  h1='Cупер сырный' pPlaseholder='512г' price='550₽' editAllProductsCount={editAllProductsCount} />
+          <MenuPosition src={potatoFree}  h1='Картошка фри' pPlaseholder='180г' price='245₽' editAllProductsCount={editAllProductsCount} />
+          <MenuPosition src={hotDog}  h1='Жгучий хот-дог' pPlaseholder='245г' price='239₽' editAllProductsCount={editAllProductsCount} />
+        </div>
       </div>
     </>
   )
