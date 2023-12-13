@@ -1,3 +1,10 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  color: #ffffff;
+}
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -5,10 +12,6 @@
   text-align: center;
 }
 
-span {
-  color: #ffffff;
-}
-
-.allProductsCount{
-  color: #000;
+.container {
+  display: flex;
 }

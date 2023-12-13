@@ -1,0 +1,42 @@
+{
+   "activeUsers": [
+      {
+        "userName": "Sergey",
+        "city": "Minsk",
+        "age": 52,
+        "id": 1
+     }
+   ],
+   "allUsers": [
+      {
+         "userName": "Sergey",
+         "city": "Minsk",
+         "age": 52,
+         "id": 2
+      },
+      {
+         "userName": "Andrey",
+         "city": "Moskow",
+         "age": 16,
+         "id": 3
+      },
+      {
+         "userName": "Kiril",
+         "city": "Riga",
+         "age": 35,
+         "id": 4
+      },
+      {
+         "userName": "Zhenya",
+         "city": "Varshava",
+         "age": 25,
+         "id": 5
+      },
+      {
+         "userName": "Igor",
+         "city": "Vrotslav",
+         "age": 20,
+         "id": 6
+      }
+   ]
+}

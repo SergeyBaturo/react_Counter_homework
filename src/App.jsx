@@ -1,28 +1,30 @@
 import './assets/styles/App.css'
-import MenuPosition from './assets/Components/MenuPosition/MenuPosition.jsx'
-import burger from './burger.jpg'
-import potatoFree from './potatoFree.jpg'
-import hotDog from './hotDog.jpg'
 import { useState } from 'react'
-import Counter from './assets/Components/Counter/Counter';
-
+import dt from './assets/usersJSON/dt.json'
+import AllUsers from './assets/Components/AllUsers/AllUsers';
+import ActiveUsers from './assets/Components/ActiveUsers/ActiveUsers';
 
 function App() {
 
-  const[allProductsCount, setAllProductsCount] = useState(0)
-
-  let editAllProductsCount = (amper) => {
-    setAllProductsCount(allProductsCount + amper)
+  function addToActiveUsers(user) {
+    const trueUser = activeUsers.find((item) => item.userName === user.userName)
+    if (trueUser) return;
+    const lastId = activeUsers[activeUsers.length - 1].id;
+    user.id = lastId + 1;
+    setActiveUsers(prevState=>[...prevState, user]);
   }
+
+  const [allUsers, setAllUsers] = useState(dt.allUsers);
+  const [activeUsers, setActiveUsers] = useState(dt.activeUsers);
 
   return (
     <>
-      <div>
-        <h1 className='allProductsCount'>{allProductsCount}</h1>
-        <div className="foodCards">
-          <MenuPosition src={burger}  h1='Cупер сырный' pPlaseholder='512г' price='550₽' editAllProductsCount={editAllProductsCount} />
-          <MenuPosition src={potatoFree}  h1='Картошка фри' pPlaseholder='180г' price='245₽' editAllProductsCount={editAllProductsCount} />
-          <MenuPosition src={hotDog}  h1='Жгучий хот-дог' pPlaseholder='245г' price='239₽' editAllProductsCount={editAllProductsCount} />
+      <div className='container'>
+        <div className="cont_allUsers">
+          <AllUsers allUsers={allUsers} setAllUsers={setAllUsers} addTActiveUsers={addToActiveUsers} />
+        </div>
+        <div className="cont_activeUsers">
+          <ActiveUsers activeUsers={activeUsers} setActiveUsers={setActiveUsers} />
         </div>
       </div>
     </>
